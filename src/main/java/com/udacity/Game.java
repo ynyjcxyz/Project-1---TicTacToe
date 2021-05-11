@@ -151,64 +151,22 @@ public class Game {
     public String checkGameWinner(char [][]grid) {
         String result = "None";
         //Student code goes here ...
-        private void Switch Switch(grid[][]){
-            case1:
-            if (grid[0][0] == grid[1][0] == grid[2][0] == 'x') {
-                result = "x wins";
-            } else if (grid[0][0] == grid[1][0] == grid[2][0] == 'o') {
-                result = "o wins";
+        private static char winner(char [][]grid)){
+        for(int i=0;i<3;i++){
+            if(grid[i][0]==grid[i][1] && grid[i][1]==grid[i][2] && grid[i][0])!='-'{
+                return grid[i][0];
             }
-            break;
-            case2:
-            if (grid[0][1] == grid[1][1] == grid[2][1] == 'x') {
-                result = "x wins";
-            } else if (grid[0][1] == grid[1][1] == grid[2][1] == 'o') {
-                result = "o wins";
-            }
-            break;
-            case3:
-            if (grid[0][2] == grid[1][2] == grid[2][2] == 'x') {
-                result = "x wins";
-            } else if (grid[0][2] == grid[1][2] == grid[2][2] == 'o') {
-                result = "o wins";
-            }
-            break;
-            case4:
-            if (grid[0][0] == grid[0][1] == grid[0][2] == 'x') {
-                result = "x wins";
-            } else if (grid[0][0] == grid[0][1] == grid[0][2] == 'o') {
-                result = "o wins";
-            }
-            break;
-            case5:
-            if (grid[1][0] == grid[1][1] == grid[1][2] == 'x') {
-                result = "x wins";
-            } else if (grid[1][0] == grid[1][1] == grid[1][2] == 'o') {
-                result = "o wins";
-            }
-            break;
-            case6:
-            if (grid[2][0] == grid[2][1] == grid[2][2] == 'x') {
-                result = "x wins";
-            } else if (grid[2][0] == grid[2][1] == grid[2][2] == 'o') {
-                result = "o wins";
-            }
-            break;
-            case7:
-            if (grid[0][0] == grid[1][1] == grid[2][2] == 'x') {
-                result = "x wins";
-            } else if (grid[0][0] == grid[1][1] == grid[2][2] == 'o') {
-                result = "o wins";
-            }
-            break;
-            case8:
-            if (grid[2][0] == grid[1][1] == grid[0][2] == 'x') {
-                result = "x wins";
-            } else if (grid[2][0] == grid[1][1] == grid[0][2] == 'o') {
-                result = "o wins";
-            }
-            break;
         }
+        for(int j=0;j<3;j++){
+            if(grid[0][j]==grid[1][j] && grid[1][j]==grid[2][j]) && grid[0][j]!='-'{
+                return grid[o][j];
+            }
+        }
+        if(grid[][]){
+
+        }
+        }
+
             return result;
 
             /**
