@@ -150,32 +150,37 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid) {
         String result = "None";
-        //Student code goes here ...
-        private static char winner(char [][]grid)){
+        return result;
+    }
+
+    //Student code goes here ...
+    private   char winner(char [][]grid){
         for(int i=0;i<3;i++){
-            if(grid[i][0]==grid[i][1] && grid[i][1]==grid[i][2] && grid[i][0])!='-'{
+            if(grid[i][0]==grid[i][1] && grid[i][1]==grid[i][2] && grid[i][0]!='-'){
                 return grid[i][0];
             }
         }
         for(int j=0;j<3;j++){
-            if(grid[0][j]==grid[1][j] && grid[1][j]==grid[2][j]) && grid[0][j]!='-'{
-                return grid[o][j];
+            if(grid[0][j]==grid[1][j] && grid[1][j]==grid[2][j] && grid[0][j]!='-'){
+                return grid[0][j];
             }
         }
-        if(grid[][]){
+//        if(grid[][]){
+//
+//        }
 
-        }
-        }
+        return 'x';
+    }
 
-            return result;
 
-            /**
-             * Main function
-             * @param args command line arguments
-             */
-            public static void main (String args[]){
-                Game game = new Game();
-                gui = new GameUI(game);
-            }
 
-        }
+    /**
+     * Main function
+     * @param args command line arguments
+     */
+    public static void main (String args[]){
+        Game game = new Game();
+        gui = new GameUI(game);
+    }
+
+}
