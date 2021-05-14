@@ -170,7 +170,7 @@ public class Game {
         //diagonal
 
         //else tie
-        throw new RuntimeException("todo");
+        throw new RuntimeException("todo by author");
     }
 
 
