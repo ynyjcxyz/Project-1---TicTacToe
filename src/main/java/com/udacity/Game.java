@@ -149,12 +149,13 @@ public class Game {
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
     public String checkGameWinner(char [][]grid) {
-        String result = "None";
+        char winner = winner(grid);//X O
+        String result = winner + " wins";
         return result;
     }
 
     //Student code goes here ...
-    private   char winner(char [][]grid){
+    private  char winner(char [][]grid){
         for(int i=0;i<3;i++){
             if(grid[i][0]==grid[i][1] && grid[i][1]==grid[i][2] && grid[i][0]!='-'){
                 return grid[i][0];
@@ -165,11 +166,11 @@ public class Game {
                 return grid[0][j];
             }
         }
-//        if(grid[][]){
-//
-//        }
 
-        return 'x';
+        //diagonal
+
+        //else tie
+        throw new RuntimeException("todo");
     }
 
 
