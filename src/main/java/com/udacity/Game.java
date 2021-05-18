@@ -178,7 +178,7 @@ public class Game {
     }
 
     public char winner(char[][] grid) {
-    char winner = '0';
+        char winner = '0';
         for (int i = 0; i < 3; i++) {
             if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2] && grid[i][0] != '-') {
                 winner = grid[i][0];
