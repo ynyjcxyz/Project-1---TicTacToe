@@ -154,9 +154,9 @@ public class Game {
     public String checkGameWinner(char[][] grid) {
         char winner = winner(grid);
         String result = "None";
-        if (winner(grid) == 'x') {
+        if (winner == 'x') {
             result = "x wins";
-        } else if (winner(grid) == 'o') {
+        } else if (winner == 'o') {
             result = "o wins";
         } else {
             if (checkTie(grid)) {
