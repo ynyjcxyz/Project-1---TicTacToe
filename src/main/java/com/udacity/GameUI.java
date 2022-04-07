@@ -3,12 +3,11 @@ package com.udacity;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Created by udacity 2016
@@ -17,9 +16,9 @@ import java.io.IOException;
 public class GameUI extends JPanel {
 
     //object reference to the actual game to add plays and reflect plays in UI
-    private Game game;
+    private final Game game;
     //frame to display grid and plays
-    private JFrame frame;
+    private final JFrame frame;
     //images
     private BufferedImage grid;
     private BufferedImage x;
@@ -36,9 +35,9 @@ public class GameUI extends JPanel {
         // load images from resources files
         try {
             ClassLoader classLoader = GameUI.class.getClassLoader();
-            grid = ImageIO.read(classLoader.getResourceAsStream("grid.png"));
-            x = ImageIO.read(classLoader.getResourceAsStream("x.png"));
-            o = ImageIO.read(classLoader.getResourceAsStream("o.png"));
+            grid = ImageIO.read(Objects.requireNonNull(classLoader.getResourceAsStream("grid.png")));
+            x = ImageIO.read(Objects.requireNonNull(classLoader.getResourceAsStream("x.png")));
+            o = ImageIO.read(Objects.requireNonNull(classLoader.getResourceAsStream("o.png")));
         } catch (IOException ex) {
             System.out.println("Failed to load images");
         }
@@ -46,21 +45,13 @@ public class GameUI extends JPanel {
         //create new game buttons
         JButton newGameButton = new JButton("New Single Player Game");
         newGameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        newGameButton.addActionListener(new ActionListener() {  // connects the new game button to its buttonPressed method
-            public void actionPerformed(ActionEvent e)
-            {
-                newGameButtonPressed(false);
-            }
-        });
+        // connects the new game button to its buttonPressed method
+        newGameButton.addActionListener(e -> newGameButtonPressed(false));
 
         JButton new2PlayerGameButton = new JButton("New 2 Player Game");
         new2PlayerGameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        new2PlayerGameButton.addActionListener(new ActionListener() {  // connects the new game button to its buttonPressed method
-            public void actionPerformed(ActionEvent e)
-            {
-                newGameButtonPressed(true);
-            }
-        });
+        // connects the new game button to its buttonPressed method
+        new2PlayerGameButton.addActionListener(e -> newGameButtonPressed(true));
 
         // control what happens when new game buttons cickes
         this.addMouseListener(new MouseAdapter() {
@@ -154,7 +145,6 @@ public class GameUI extends JPanel {
         //check if game ended again after computer's turn
         if(game.doChecks()){
             //if game over no need to continue, so return
-            return;
         }
     }
 

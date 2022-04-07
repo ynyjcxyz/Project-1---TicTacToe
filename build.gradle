@@ -8,7 +8,9 @@ repositories {
 }
 
 dependencies {
-   testCompile group: 'junit', name: 'junit', version: '4.+'
+// https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+
 }
 
 tasks.withType(Test) {
@@ -20,11 +22,7 @@ tasks.withType(Test) {
         showCauses true
         showStackTraces true
 
-        // set options for log level DEBUG and INFO
-        debug {
-            events "started", "passed", "skipped", "failed", "standardOut", "standardError"
-            exceptionFormat "full"
-        }
+
         info.events = debug.events
         info.exceptionFormat = debug.exceptionFormat
 
