@@ -1,6 +1,6 @@
-package com.udacity; //打包相关
+package com.udacity;
 
-import java.util.Arrays;  //导入某个数组类
+import java.util.Arrays;
 
 /**
  * Created by udacity 2016
@@ -8,40 +8,40 @@ import java.util.Arrays;  //导入某个数组类
  */
 public class Game {
 
-    private char turn; // who's turn is it, 'x' or 'o' ? x always starts  //声明字符类型私有变量
-    private boolean twoPlayer; // true if this is a 2 player game, false if AI playing  //声明布尔型私有变量
-    private char[][] grid; // a 2D array of chars representing the game grid  //声明整型私有变量
-    private int freeSpots; // counts the number of empty spots remaining on the board (starts from 9  and counts down)  //声明整型私有变量
-    private static GameUI gui;  //作用不明
+    private char turn; // who's turn is it, 'x' or 'o' ? x always starts
+    private boolean twoPlayer; // true if this is a 2 player game, false if AI playing
+    private char[][] grid; // a 2D array of chars representing the game grid
+    private int freeSpots; // counts the number of empty spots remaining on the board (starts from 9  and counts down)
+    private static GameUI gui;
 
     /**
      * Create a new single player game
      */
     public Game() {
         newGame(false);
-    }  //声明公共函数
+    }
 
     /**
      * Create a new game by clearing the 2D grid and restarting the freeSpots counter and setting the turn to x
      *
      * @param twoPlayer: true if this is a 2 player game, false if playing against the computer
      */
-    public void newGame(boolean twoPlayer) {  //开启一个新游戏
+    public void newGame(boolean twoPlayer) {
         //sets a game to one or two player
-        this.twoPlayer = twoPlayer;  //布尔变量赋值给指定目标
+        this.twoPlayer = twoPlayer;
 
         // initialize all chars in 3x3 game grid to '-'
-        grid = new char[3][3]; //开辟一个新的3X3数组
+        grid = new char[3][3];
         //fill all empty slots with -
-        for (int i = 0; i < 3; i++) {   //使用嵌套的for循环来给3X3数组中的每一个位置赋值'-',得到3X3的'-'
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 grid[i][j] = '-';
             }
         }
         //start with 9 free spots and decrement by one every time a spot is taken
-        freeSpots = 9; //私有变量赋值9
+        freeSpots = 9;
         //x always starts
-        turn = 'x';  //总是从X开始
+        turn = 'x';
     }
 
 
@@ -56,7 +56,7 @@ public class Game {
      * '-' if no one has played here
      * '!' if i or j is out of bounds
      */
-    public char gridAt(int i, int j) {  //i,j超越3x3边界的情形,返回'!'(i,j从0到2)
+    public char gridAt(int i, int j) {
         if (i >= 3 || j >= 3 || i < 0 || j < 0)
             return '!';
         return grid[i][j];
@@ -138,7 +138,6 @@ public class Game {
                 turn = 'x';
             }
         }
-        return;
     }
 
 
@@ -208,7 +207,7 @@ public class Game {
      *
      * @param args command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Game game = new Game();
         gui = new GameUI(game);
     }
